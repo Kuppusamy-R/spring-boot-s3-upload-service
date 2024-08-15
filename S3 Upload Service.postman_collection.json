@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "e6c4f0e6-b5f4-447a-818a-ed32889607e5",
+		"name": "S3 Upload Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31844376"
+	},
+	"item": [
+		{
+			"name": "File Upload",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "admin",
+						"password": "password"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Admin/Documents/Hello.txt"
+						}
+					]
+				},
+				"url": "localhost:8080/api/files/upload"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Presigned URL",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "admin",
+						"password": "password"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/files/generate-presigned-url?fileName=1723718357072-Hello.txt",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"files",
+						"generate-presigned-url"
+					],
+					"query": [
+						{
+							"key": "fileName",
+							"value": "1723718357072-Hello.txt"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
